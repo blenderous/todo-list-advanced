@@ -110,7 +110,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem("items") === null) {
-      fetch("/initial-tasks.json", {
+      fetch("./initial-tasks.json", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

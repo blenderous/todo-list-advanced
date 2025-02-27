@@ -12,10 +12,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useState } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 function sortIcon(sortType: string) {

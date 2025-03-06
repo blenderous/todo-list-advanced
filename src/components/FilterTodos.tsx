@@ -23,10 +23,10 @@ function FilterTodos({
   setStatusFilter: (value: string) => void;
 }) {
   return (
-    <div className="flex justify-between items-center p-4 gap-4">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-4 bg-background text-foreground rounded-md p-4 mb-4">
       <Input
         type="text"
-        placeholder="Search"
+        placeholder="Search by title"
         value={titleFilter}
         onChange={(e) => setTitleFilter(e.target.value)}
       />
@@ -35,7 +35,7 @@ function FilterTodos({
         onValueChange={(value) => setPriorityFilter(value)}
       >
         <SelectTrigger className="w-full">
-          <SelectValue placeholder="Priority" />
+          <SelectValue placeholder="Filter by priority" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">All</SelectItem>
@@ -51,7 +51,7 @@ function FilterTodos({
         onValueChange={(value) => setStatusFilter(value)}
       >
         <SelectTrigger className="w-full">
-          <SelectValue placeholder="Status" />
+          <SelectValue placeholder="Filter by status" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">All</SelectItem>

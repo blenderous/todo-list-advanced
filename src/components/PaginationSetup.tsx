@@ -32,7 +32,7 @@ function PaginationSetup({
 
   return (
     <>
-      <div className="mt-4 flex justify-center items-center gap-4">
+      <div className="bg-background text-foreground p-4 my-4 flex justify-center items-center gap-4 rounded-md">
         <div className="flex items-center">
           <Select
             defaultValue={itemsPerPage.toString()}

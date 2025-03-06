@@ -60,104 +60,109 @@ function AddTodoForm({
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-row items-start justify-between gap-4 py-4"
-      >
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem>
-              <VisuallyHidden>
-                <FormLabel>Title</FormLabel>
-              </VisuallyHidden>
-              <FormControl>
-                <Input className="w-[300px]" placeholder="Title" {...field} />
-              </FormControl>
-              <VisuallyHidden>
-                <FormDescription>
-                  This is the title of your todo item.
-                </FormDescription>
-              </VisuallyHidden>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="priority"
-          render={({ field }) => (
-            <FormItem>
-              <VisuallyHidden>
-                <FormLabel>Priority</FormLabel>
-              </VisuallyHidden>
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  {...field}
-                >
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Priority" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="none">None</SelectItem>
-                    <SelectItem value="low">Low</SelectItem>
-                    <SelectItem value="medium">Medium</SelectItem>
-                    <SelectItem value="high">High</SelectItem>
-                    <SelectItem value="urgent">Urgent</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormControl>
-              <VisuallyHidden>
-                <FormDescription>
-                  This is the priority of your todo item.
-                </FormDescription>
-              </VisuallyHidden>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="status"
-          render={({ field }) => (
-            <FormItem>
-              <VisuallyHidden>
-                <FormLabel>Status</FormLabel>
-              </VisuallyHidden>
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  {...field}
-                >
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="not_started">Not Started</SelectItem>
-                    <SelectItem value="in_progress">In progress</SelectItem>
-                    <SelectItem value="completed">Completed</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormControl>
-              <VisuallyHidden>
-                <FormDescription>
-                  This is the status of your todo item.
-                </FormDescription>
-              </VisuallyHidden>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <div className="pt-2">
-          <Button type="submit">Add Todo</Button>
-        </div>
-      </form>
-    </Form>
+    <div className="p-4 rounded-md bg-background text-foreground">
+      <h2 className="mb-2">Add Todo</h2>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-row items-start justify-between gap-2 & > *:flex-grow"
+        >
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem>
+                <VisuallyHidden>
+                  <FormLabel>Title</FormLabel>
+                </VisuallyHidden>
+                <FormControl>
+                  <Input placeholder="Title" {...field} />
+                </FormControl>
+                <VisuallyHidden>
+                  <FormDescription>
+                    This is the title of your todo item.
+                  </FormDescription>
+                </VisuallyHidden>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="priority"
+            render={({ field }) => (
+              <FormItem>
+                <VisuallyHidden>
+                  <FormLabel>Priority</FormLabel>
+                </VisuallyHidden>
+                <FormControl>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    {...field}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Priority" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="none">None</SelectItem>
+                      <SelectItem value="low">Low</SelectItem>
+                      <SelectItem value="medium">Medium</SelectItem>
+                      <SelectItem value="high">High</SelectItem>
+                      <SelectItem value="urgent">Urgent</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <VisuallyHidden>
+                  <FormDescription>
+                    This is the priority of your todo item.
+                  </FormDescription>
+                </VisuallyHidden>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="status"
+            render={({ field }) => (
+              <FormItem>
+                <VisuallyHidden>
+                  <FormLabel>Status</FormLabel>
+                </VisuallyHidden>
+                <FormControl>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    {...field}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="not_started">Not Started</SelectItem>
+                      <SelectItem value="in_progress">In progress</SelectItem>
+                      <SelectItem value="completed">Completed</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <VisuallyHidden>
+                  <FormDescription>
+                    This is the status of your todo item.
+                  </FormDescription>
+                </VisuallyHidden>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="pt-2">
+            <Button type="submit" className="w-full">
+              Add Todo
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </div>
   );
 }
 

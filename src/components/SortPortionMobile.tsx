@@ -49,7 +49,7 @@ function sortStatusIcon(sortType: string) {
   }
 }
 
-function TableHead({
+function SortPortionMobile({
   titleSort,
   setTitleSort,
   prioritySort,
@@ -74,18 +74,18 @@ function TableHead({
     setStatusSort(value);
   };
   return (
-    <thead>
-      <tr className="bg-background text-foreground sticky top-0">
-        <th className="p-2">
-          Title
+    <div>
+      <div className="bg-background text-foreground flex justify-around items-center gap-4 rounded-md p-4 mb-4">
+        <div className="p-2 flex flex-col gap-2">
+          <span className="text-center">Sort by Title</span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="ml-2">
+              <Button variant="outline">
                 <VisuallyHidden>Sort by title</VisuallyHidden>
                 {sortIcon(titleSort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>
@@ -114,17 +114,17 @@ function TableHead({
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-        </th>
-        <th className="p-2">
-          Priority
+        </div>
+        <div className="p-2 flex flex-col gap-2">
+          <span className="text-center">Sort by Priority</span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="ml-2">
+              <Button variant="outline">
                 <VisuallyHidden>Sort by priority</VisuallyHidden>
                 {sortPriorityIcon(prioritySort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>
@@ -153,17 +153,17 @@ function TableHead({
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-        </th>
-        <th className="p-2">
-          Status
+        </div>
+        <div className="p-2 flex flex-col gap-2">
+          <span className="text-center">Sort by Status</span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="ml-2">
+              <Button variant="outline">
                 <VisuallyHidden>Sort by status</VisuallyHidden>
                 {sortStatusIcon(statusSort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>
@@ -192,13 +192,10 @@ function TableHead({
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-        </th>
-        <th className="p-2">
-          <span className="sr-only">Edit or Delete</span>
-        </th>
-      </tr>
-    </thead>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default TableHead;
+export default SortPortionMobile;

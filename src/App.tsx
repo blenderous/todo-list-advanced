@@ -16,6 +16,8 @@ import FilterTodos from "./components/FilterTodos";
 import { filterBy } from "./lib/filter";
 import PaginationSetup from "./components/PaginationSetup";
 import showCurrentPage from "./lib/showCurrentPage";
+import TodoListBodyMobile from "./components/TodoListBodyMobile";
+import SortPortionMobile from "./components/SortPortionMobile";
 
 function App() {
   const [items, setItems] = useState<Item[] | null>(null);
@@ -176,8 +178,10 @@ function App() {
   return (
     <>
       <main className="w-full h-screen p-4">
-        <h1 className="text-3xl font-bold text-center mb-4">Welcome user!</h1>
-        <section className="bg-background text-foreground">
+        <h1 className="text-3xl font-bold text-center mb-4">
+          Todo List App Advanced
+        </h1>
+        <section>
           <FilterTodos
             titleFilter={titleFilter}
             setTitleFilter={setTitleFilter}
@@ -189,7 +193,7 @@ function App() {
         </section>
         {/* Todos displayed in this section */}
         <section>
-          <table className="w-full">
+          <table className="hidden md:table w-full rounded-md overflow-hidden">
             <TableHead
               statusSort={statusSort}
               setStatusSort={setStatusSort}
@@ -208,13 +212,28 @@ function App() {
               handleSaveEditProp={handleSaveEdit}
             />
           </table>
-        </section>
-        {/* section to add Todo */}
-        <section className="bg-background text-foreground p-4">
-          <AddTodoForm handleAddTodo={handleAddTodo} />
+          <div className="md:hidden mb-4">
+            <SortPortionMobile
+              statusSort={statusSort}
+              setStatusSort={setStatusSort}
+              prioritySort={prioritySort}
+              setPrioritySort={setPrioritySort}
+              titleSort={titleSort}
+              setTitleSort={setTitleSort}
+            />
+            <TodoListBodyMobile
+              items={showCurrentPage(
+                filterBy(items, titleFilter, priorityFilter, statusFilter),
+                currentPage,
+                itemsPerPage
+              )}
+              handleDelete={handleDelete}
+              handleSaveEditProp={handleSaveEdit}
+            />
+          </div>
         </section>
         {/* Pagination */}
-        <section className="bg-background text-foreground p-4">
+        <section>
           <PaginationSetup
             itemsPerPage={itemsPerPage}
             setItemsPerPage={setItemsPerPage}
@@ -223,6 +242,12 @@ function App() {
             triggerPreviousPage={triggerPreviousPage}
             triggerNextPage={triggerNextPage}
           />
+        </section>
+        {/* section to add Todo */}
+        <section>
+          <div className="pb-4">
+            <AddTodoForm handleAddTodo={handleAddTodo} />
+          </div>
         </section>
       </main>
     </>

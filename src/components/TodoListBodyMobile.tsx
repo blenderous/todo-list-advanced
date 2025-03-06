@@ -58,7 +58,7 @@ function TodoListBodyMobile({
     <div className="flex flex-col gap-2">
       {items?.map((item) => (
         <div
-          className="bg-background text-foreground rounded-md flex justify-between items-start"
+          className="bg-background text-foreground rounded-md flex justify-between items-stretch"
           key={item.id}
         >
           <div className="p-4 flex flex-col gap-2">
@@ -91,7 +91,7 @@ function TodoListBodyMobile({
               <MobileStatus status={item.status} />
             )}
           </div>
-          <div className="p-4">
+          <div className="flex flex-col gap-4 p-4">
             <EditButton
               handleEdit={handleEdit}
               id={item.id}

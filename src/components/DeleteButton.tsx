@@ -39,14 +39,14 @@ function DeleteButton({
   return (
     <>
       {editId === id ? (
-        <Button onClick={handleCancelEdit} className="ml-2">
+        <Button onClick={handleCancelEdit} className="md:ml-2">
           <span className="sr-only">Cancel</span>
           <XIcon />
         </Button>
       ) : (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button className="ml-2">
+            <Button className="md:ml-2">
               <span className="sr-only">Delete</span>
               <TrashIcon />
             </Button>

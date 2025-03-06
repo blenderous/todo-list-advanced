@@ -85,7 +85,7 @@ function TableHead({
                 {sortIcon(titleSort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>
@@ -124,7 +124,7 @@ function TableHead({
                 {sortPriorityIcon(prioritySort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>
@@ -163,7 +163,7 @@ function TableHead({
                 {sortStatusIcon(statusSort)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-8">
               <VisuallyHidden>
                 <DropdownMenuLabel>Choose from below</DropdownMenuLabel>
               </VisuallyHidden>

@@ -65,7 +65,7 @@ function AddTodoForm({
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-row items-start justify-between gap-2 & > *:flex-grow"
+          className="flex flex-col md:flex-row items-start justify-between gap-2 & > *:md:flex-grow & > *:w-full"
         >
           <FormField
             control={form.control}
@@ -155,11 +155,7 @@ function AddTodoForm({
               </FormItem>
             )}
           />
-          <div className="pt-2">
-            <Button type="submit" className="w-full">
-              Add Todo
-            </Button>
-          </div>
+          <Button type="submit">Add Todo</Button>
         </form>
       </Form>
     </div>

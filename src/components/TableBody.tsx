@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 function TableBody({
   items,
@@ -148,7 +149,7 @@ function TdStatus({ status }: { status: string }) {
   }
   return (
     <td className="p-2">
-      <span className={`px-2 py-1 rounded-full ${statusColor}`}>
+      <span className={cn("px-2 py-1 rounded-full", statusColor)}>
         {statusText}
       </span>
     </td>

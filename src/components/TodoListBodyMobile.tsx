@@ -10,6 +10,7 @@ import {
 import { Input } from "./ui/input";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
+import { cn } from "@/lib/utils";
 
 type TodoListBodyMobileProps = {
   items: Item[] | null;
@@ -153,7 +154,7 @@ function MobileStatus({ status }: { status: string }) {
   }
   return (
     <div>
-      <span className={`inline-block px-2 py-1 rounded-full ${statusColor}`}>
+      <span className={cn("inline-block px-2 py-1 rounded-full", statusColor)}>
         {statusText}
       </span>
     </div>
